@@ -3,158 +3,149 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Six One Production — Events & Cricket Academy</title>
-  <meta name="description" content="Six One Production — Event organizer, sports events and cricket academy."/>
+  <title>Six One Production — Corporate Events & Cricket Ground Booking</title>
+  <meta name="description" content="Six One Production — Professional corporate event management and cricket ground bookings."/>
   <style>
     :root{
-      --accent:#0b6cf0;
-      --dark:#0f1724;
-      --muted:#6b7280;
-      --card:#ffffff;
-      --bg:#f6f8fb;
-      --radius:12px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --accent: #0b6cf0; /* blue reference */
+      --dark: #0f1724;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --bg: #f4f8ff;
+      --radius: 12px;
+      --glass: rgba(255,255,255,0.7);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue";
     }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--dark);-webkit-font-smoothing:antialiased}
-    .wrap{max-width:1100px;margin:36px auto;padding:20px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:64px;height:64px;background:linear-gradient(135deg,var(--accent),#6dd3ff);
-      border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;
-      box-shadow:0 6px 18px rgba(11,108,240,0.18)
-    }
-    nav{display:flex;gap:14px;align-items:center}
-    a.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-    main{margin-top:28px}
+    body{margin:0;background:linear-gradient(180deg,#f8fbff,#eef6ff);color:var(--dark);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1100px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo-img{width:80px;height:80px;border-radius:12px;object-fit:contain;background:#fff;padding:8px;box-shadow:0 8px 30px rgba(11,108,240,0.08)}
+    .brand-text{line-height:1}
+    .brand h1{margin:0;font-size:20px;letter-spacing:0.4px}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+    nav{display:flex;gap:12px;align-items:center}
+    a.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;box-shadow:0 8px 20px rgba(11,108,240,0.12)}
+    a.ghost{background:#fff;border:1px solid #e6eefb;padding:10px 14px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600}
+    main{margin-top:20px}
     .hero{display:flex;gap:28px;align-items:center}
     .hero-left{flex:1}
     .hero-right{flex:1;display:flex;justify-content:center}
-    h1{font-size:28px;margin:0 0 8px}
+    h2{color:var(--accent);margin:0 0 8px;font-size:18px;font-weight:700}
+    h1{font-size:34px;margin:0 0 10px}
     p.lead{color:var(--muted);margin:0 0 18px}
-    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
-    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 4px 18px rgba(15,23,36,0.06)}
-    .service h3{margin:4px 0 8px}
-    .cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .stats{display:flex;gap:12px;margin-top:22px}
-    .stat{background:linear-gradient(180deg,#fff,#f8fbff);padding:12px;border-radius:10px;min-width:110px;text-align:center}
-    footer{margin-top:36px;padding:18px 12px;border-radius:10px;color:var(--muted);font-size:14px}
+    .cta-row{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(15,23,36,0.06)}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+    .service h3{margin:6px 0 8px}
+    .booking-form input, .booking-form textarea, .booking-form select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefb;margin-top:8px}
+    .booking-form button{margin-top:10px}
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:14px}
     .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
-    .contact{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
-    @media (max-width:800px){ .hero{flex-direction:column}.contact{grid-template-columns:1fr} nav{display:none} .wrap{padding:12px} h1{font-size:24px} }
-    /* small input style */
-    input, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px}
-    button.primary{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;font-weight:600}
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
+    footer{margin-top:30px;padding:18px 12px;border-radius:10px;color:var(--muted);font-size:14px;text-align:center}
+    @media (max-width:900px){ .hero{flex-direction:column}.contact-grid{grid-template-columns:1fr} nav{display:none} .brand h1{font-size:16px}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="brand">
-        <div class="logo">S1</div>
-        <div>
-          <div style="font-weight:700">Six One Production</div>
-          <div style="font-size:13px;color:var(--muted)">Events • Sports Events • Cricket Academy</div>
+        <!-- place your logo file as logo.png in same folder -->
+        <img src="logo.png" alt="Six One Production" class="logo-img" />
+        <div class="brand-text">
+          <h1>Six One Production</h1>
+          <p>Corporate Events · Sports Events · Cricket Ground Booking</p>
         </div>
       </div>
 
       <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#academy">Academy</a>
-        <a href="#contact" class="btn">Contact Us</a>
+        <a href="#about" class="ghost">About</a>
+        <a href="#services" class="ghost">Services</a>
+        <a href="#book" class="btn">Book a Ground</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
         <div class="hero-left">
-          <h1>We design memorable events and build sporting talent.</h1>
-          <p class="lead">Six One Production organises corporate events, community sports tournaments and runs a professional cricket academy — end-to-end event logistics, marketing and athlete development.</p>
+          <h2>Professional & Reliable</h2>
+          <h1>Corporate Events • Conferences • Team Building</h1>
+          <p class="lead">We design and deliver seamless corporate productions — stage, AV, logistics and event marketing. We also manage cricket ground bookings and run structured coaching for all ages.</p>
 
           <div class="cta-row">
-            <a class="btn" href="#contact">Book an event</a>
-            <a style="padding:10px 14px;border-radius:10px;background:#fff;border:1px solid #e6e9ef;text-decoration:none;color:var(--dark)" href="#services">Our services</a>
+            <a class="btn" href="#book">Book a Ground</a>
+            <a class="ghost" href="#contact">Request Proposal</a>
           </div>
 
-          <div class="stats">
-            <div class="stat">
-              <div style="font-size:18px;font-weight:700">120+</div>
-              <div style="color:var(--muted)">Events organized</div>
+          <div style="display:flex;gap:12px;margin-top:16px">
+            <div class="card" style="padding:14px">
+              <div style="font-weight:700;font-size:18px">120+</div>
+              <div style="color:var(--muted);font-size:13px">Events organized</div>
             </div>
-            <div class="stat">
-              <div style="font-size:18px;font-weight:700">8</div>
-              <div style="color:var(--muted)">Years experience</div>
+            <div class="card" style="padding:14px">
+              <div style="font-weight:700;font-size:18px">250+</div>
+              <div style="color:var(--muted);font-size:13px">Ground bookings</div>
             </div>
-            <div class="stat">
-              <div style="font-size:18px;font-weight:700">250+</div>
-              <div style="color:var(--muted)">Academy students</div>
+            <div class="card" style="padding:14px">
+              <div style="font-weight:700;font-size:18px">8 yrs</div>
+              <div style="color:var(--muted);font-size:13px">Experience</div>
             </div>
           </div>
         </div>
 
         <div class="hero-right">
           <div class="card" style="width:100%;max-width:420px;">
-            <h3 style="margin-top:0">Why choose Six One?</h3>
-            <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
-              <li>End-to-end event management & logistics</li>
-              <li>Experienced sports operations & referees</li>
-              <li>Structured coaching programs for cricket</li>
-              <li>Sports marketing, live scoring and streaming</li>
-            </ul>
-            <div style="margin-top:12px">
-              <strong>Quick contact</strong>
-              <div style="margin-top:8px;color:var(--muted)">Email us: <a href="mailto:info@sixoneproduction.com">info@sixoneproduction.com</a></div>
-              <div style="margin-top:8px"><a class="btn" href="#contact">Get a quote</a></div>
-            </div>
+            <h3 style="margin-top:0;color:var(--dark)">Quick Booking — Cricket Ground</h3>
+            <!-- Simple booking form: you can change action to your backend or mailto -->
+            <form id="groundForm" class="booking-form" action="mailto:info@sixoneproduction.com" method="post" enctype="text/plain">
+              <label><strong>Company / Name</strong></label>
+              <input name="name" placeholder="Your name or company" required>
+              <label><strong>Email</strong></label>
+              <input name="email" type="email" placeholder="you@example.com" required>
+              <label><strong>Preferred Date</strong></label>
+              <input name="date" type="date" required>
+              <label><strong>Ground / Location</strong></label>
+              <select name="location" required>
+                <option value="">Choose a ground</option>
+                <option>City Stadium Ground</option>
+                <option>Greenfield Sports Complex</option>
+                <option>Community Cricket Park</option>
+              </select>
+              <label><strong>Message / Requirements</strong></label>
+              <textarea name="message" rows="3" placeholder="Numbers, timings, equipment etc."></textarea>
+              <div style="text-align:right"><button class="btn" type="submit">Send Booking Request</button></div>
+            </form>
+            <p style="margin-top:10px;color:var(--muted);font-size:13px">Or email: <a href="mailto:info@sixoneproduction.com">info@sixoneproduction.com</a></p>
           </div>
         </div>
       </section>
 
       <section id="services" style="margin-top:26px">
-        <h2 style="margin-bottom:6px">Our Services</h2>
+        <h2 style="color:var(--accent)">Our Services</h2>
         <div class="services">
           <div class="card service">
-            <h3>Event Management</h3>
-            <p class="lead" style="margin:0">Corporate events, concerts, school events — full production, venue, sound and logistics.</p>
+            <h3>Corporate Event Production</h3>
+            <p class="lead" style="margin:0">End-to-end event management — staging, AV, lighting, staffing and on-ground operations.</p>
           </div>
           <div class="card service">
-            <h3>Sports Tournaments</h3>
-            <p class="lead" style="margin:0">Organize local and regional tournaments for cricket, football and athletics with match officiating and live scoring.</p>
+            <h3>Sports Events & Tournaments</h3>
+            <p class="lead" style="margin:0">We run local & regional tournaments with live scoring, officiating and media coverage.</p>
+          </div>
+          <div class="card service">
+            <h3>Cricket Ground Booking</h3>
+            <p class="lead" style="margin:0">Book grounds with pitch prep, groundsmen, equipment and umpires — hourly or full-day bookings.</p>
           </div>
           <div class="card service">
             <h3>Cricket Academy</h3>
-            <p class="lead" style="margin:0">Coaching programs for all ages — batting, bowling, fielding, fitness and match temperament.</p>
-          </div>
-          <div class="card service">
-            <h3>Media & Streaming</h3>
-            <p class="lead" style="margin:0">Live streaming, highlight reels and social media coverage for events and matches.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="academy" style="margin-top:22px">
-        <h2>Cricket Academy</h2>
-        <div class="card" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
-          <div style="flex:1;min-width:220px">
-            <h3 style="margin-top:0">Programs & coaching</h3>
-            <p class="lead" style="margin:0">Structured programs for juniors, teens and adult learners — technical drills, match practice and fitness coaching.</p>
-            <ul style="margin-top:10px;color:var(--muted);padding-left:18px">
-              <li>Beginner to advanced training</li>
-              <li>Weekend batches & weekday academies</li>
-              <li>Personal coaching & video analysis</li>
-            </ul>
-          </div>
-          <div style="width:260px">
-            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop" alt="cricket" style="width:100%;border-radius:8px;object-fit:cover">
+            <p class="lead" style="margin:0">Structured coaching for juniors and adults — technique, fitness and match play.</p>
           </div>
         </div>
       </section>
 
       <section id="gallery" style="margin-top:22px">
-        <h2>Gallery</h2>
+        <h2 style="color:var(--accent)">Gallery & Highlights</h2>
         <div class="gallery">
           <img alt="sample" src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=800&auto=format&fit=crop">
           <img alt="sample" src="https://images.unsplash.com/photo-1509228627159-645c70101f5a?q=80&w=800&auto=format&fit=crop">
@@ -164,35 +155,26 @@
       </section>
 
       <section id="contact" style="margin-top:22px">
-        <h2>Contact us</h2>
-        <div class="contact">
+        <h2 style="color:var(--accent)">Contact & Office</h2>
+        <div class="contact-grid">
           <div>
             <div class="card">
-              <h3 style="margin-top:0">Get a quote / Enquiries</h3>
-              <form action="mailto:info@sixoneproduction.com" method="post" enctype="text/plain">
-                <label style="font-weight:600;font-size:13px">Name</label><input name="name" placeholder="Your name" required>
-                <label style="font-weight:600;font-size:13px;margin-top:8px;display:block">Email</label><input name="email" type="email" placeholder="you@example.com" required>
-                <label style="font-weight:600;font-size:13px;margin-top:8px;display:block">Message</label>
-                <textarea name="message" rows="4" placeholder="Tell us about your event or academy enquiry" required></textarea>
-                <div style="margin-top:10px;text-align:right"><button class="primary" type="submit">Send</button></div>
-              </form>
+              <h3 style="margin-top:0">Request a Proposal</h3>
+              <p style="color:var(--muted)">Prefer formal quote or a site visit? Send details and we'll respond within 24 hours.</p>
+              <p style="margin-top:8px"><strong>Email:</strong> <a href="mailto:info@sixoneproduction.com">info@sixoneproduction.com</a></p>
+              <p style="margin-top:6px"><strong>Phone:</strong> +91 90000 00000</p>
             </div>
           </div>
 
           <div>
             <div class="card">
-              <h3 style="margin-top:0">Contact & Location</h3>
-              <p style="margin:0;color:var(--muted)">Email: <a href="mailto:info@sixoneproduction.com">info@sixoneproduction.com</a></p>
-              <p style="margin:6px 0 0;color:var(--muted)">Phone: +91 90000 00000</p>
-              <p style="margin:10px 0 0;color:var(--muted)">Address: Your office address here</p>
-              <div style="margin-top:10px">
-                <strong>Working hours</strong>
-                <div style="color:var(--muted)">Mon - Sat: 9:00 AM - 7:00 PM</div>
+              <h3 style="margin-top:0">Location & Hours</h3>
+              <p style="margin:0;color:var(--muted)">Your office address here</p>
+              <p style="margin-top:8px;color:var(--muted)">Mon - Sat: 9:00 AM - 7:00 PM</p>
+              <div style="margin-top:8px">
+                <strong>Follow</strong>
+                <div style="margin-top:6px;color:var(--muted)"><a href="#" style="text-decoration:none;color:var(--accent)">Facebook</a> • <a href="#" style="text-decoration:none;color:var(--accent)">Instagram</a></div>
               </div>
-            </div>
-            <div style="margin-top:10px" class="card">
-              <h3 style="margin-top:0">Follow us</h3>
-              <div style="color:var(--muted)"><a href="#" style="text-decoration:none">Facebook</a> • <a href="#" style="text-decoration:none">Instagram</a> • <a href="#" style="text-decoration:none">YouTube</a></div>
             </div>
           </div>
         </div>
@@ -200,12 +182,16 @@
     </main>
 
     <footer>
-      © <span id="year"></span> Six One Production — Event organizer, sports events & cricket academy.
+      © <span id="year"></span> Six One Production — Corporate events & cricket ground booking.
     </footer>
   </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    // optional: simple form success message (client-side)
+    document.getElementById('groundForm').addEventListener('submit', function(){
+      setTimeout(function(){ alert('Booking request sent. We will contact you shortly.'); }, 300);
+    });
   </script>
 </body>
 </html>
